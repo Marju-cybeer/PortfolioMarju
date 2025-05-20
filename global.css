@@ -1,0 +1,850 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f1f3f2;
+    color: #121111;
+  }
+  
+  
+
+  /*--fixa o cabeçalho durante a rolagem*/
+  header.header { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color:#121111;
+    display: flex;
+    justify-content: space-between;
+    padding:20px 100px ;
+    box-shadow: 0px 5px 10px black;
+  }
+  
+  .logo img {
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+  }
+ /* Estilo base do botão hamburguer */
+.hamburger {
+  width: 30px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1001; /* Fica acima do menu */
+}
+
+.hamburger span {
+  height: 4px;
+  background: #edef34;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Animação para transformar em "X" */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Estilo do menu */
+.mobile-menu {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #edef34;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  padding: 20px;
+  display: none;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu ul li {
+  margin: 10px 0;
+}
+
+.mobile-menu ul li a {
+  text-decoration: none;
+  color: #edef34;
+  
+}
+/* Menu Desktop - escondido no mobile */
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-shadow: 0px 4px 4px #e5b050;  
+}
+
+.desktop-menu ul {
+  display: flex;
+  list-style: none;
+  
+  margin: 0;
+}
+
+/* Relevo no menu desktop */
+.desktop-menu ul li a {
+  color: #edef34;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.desktop-menu ul li a:hover {
+  background-color: #121111; /* Amarelo sol */
+  color: #edef34;
+  transform: scale(1.2);
+  border: 2px solid #121111;
+}
+
+/* Relevo no menu mobile */
+.mobile-menu ul li a {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 6px 12px;
+  color: #edef34;
+  text-decoration: none;
+ transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  border-radius: 6px;
+  border: 2px solid transparent;
+}
+
+.mobile-menu ul li a:hover {
+  background-color: #edef34;
+  color: #121111;
+  transform: scale(1.1);
+  border: 2px solid #121111;
+}
+
+
+
+/* Esconder menu desktop e mostrar botão hamburguer no mobile */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .hamburger {
+    align-items: right;
+    display: flex;
+    right: 20px;
+    left: 0;
+    right: 0;
+    margin-left: 120px;
+    margin-top: 25px;
+    
+  }
+
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #121111;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    padding: 20px;
+  }
+
+  .mobile-menu ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* No desktop, esconde o botão hambúrguer e o menu mobile */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+  
+  .apresentacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right,#edef34, black);
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    box-shadow: 0px 5px 10px black;
+    padding-top: 150px; /* Ajuste conforme a altura do seu cabeçalho */
+     margin-bottom: 95px;
+  }
+  
+  .apresentacao .texto {
+    max-width: 50%;
+    margin-left: 100px;
+  }
+  
+  .apresentacao h1 {
+    color: #000;
+    font-size: 3rem;
+    font-family: "Sonsie One", system-ui; 
+    text-shadow: 0px 3px 4px #5f5e5e;    
+  }
+  .apresentacao p{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .apresentacao .botao {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #edef34;
+    border-color: #000;
+    border-style: solid;
+    color: black;
+    text-decoration: none;
+    border-radius: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-shadow: 0px 5px 10px black;
+}
+.apresentacao .botao:hover {
+  transform: scale(1.09);
+}
+  
+  .apresentacao .foto img {
+    max-width: 290px;
+    margin-right: 80px;
+    box-shadow: 10px 10px 9px black;
+  }
+
+    /*SOBRE*/
+/* Estilo retrô terminal */
+
+
+.sobre-terminal {
+  margin-top: 100px;
+  background:#121111;
+  color: #edef34;
+  padding: 3rem 2rem;
+  font-family: 'VT323', monospace;
+  font-size: 1.8rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px black;
+  text-align: left;
+}
+
+/* Título */
+.titulo-terminal {
+  margin-top: 90px;
+  color: #edef34;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Texto digitado com cursor estilo terminal */
+.maquina-texto-terminal {
+  white-space: pre-wrap;
+  overflow: hidden;
+  border-right: 10px solid #edef34;
+  animation: blink-terminal 0.7s step-end infinite;
+  min-height: 300px;
+}
+
+/* Cursor piscando */
+@keyframes blink-terminal {
+  50% { border-color: transparent; }
+}
+
+/* Animação de brilho sutil no título */
+@keyframes glow {
+  from { text-shadow: 0 0 5px #e5b050; }
+  to   { text-shadow: 0 0 20px #edef34, 0 0 30px #e5b050; }
+}
+  .sobre h2  {
+    padding: 40px 20px;
+    padding-top: 140px;
+    text-align: left;
+    font-size: 2rem;
+    text-shadow: 0px 3px 4px #5f5e5e; 
+    margin-left: 100px;
+  }
+  .sobre p{
+        padding: 40px 20px;
+        text-align: left;
+        font-size: 1.8rem;
+        margin-left: 100px; 
+  }  
+  .trabalhos h2{
+        padding: 40px 20px;
+        padding-top: 140px;
+        text-align: left;
+        font-size: 2rem;
+        text-shadow: 0px 3px 4px #5f5e5e; 
+        margin-left: 100px;
+  }
+
+ .ferramentas {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 240px;
+}
+
+.card-ferramentas {
+  background-color: #121111;
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0px 5px 10px black;
+}
+
+.ferramentas .listas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ferramentas .coluna {
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.ferramentas h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #edef34; /* amarelo do sol */
+  text-shadow: 0px 3px 4px #e5b050; 
+  
+}
+
+.ferramentas ul {
+  list-style:none;
+  padding-left:0;
+  margin:0;
+  
+}
+
+.ferramentas li {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #edef34;
+  font-style: oblique;
+  font-weight: 500;
+}
+.container-ferramentas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.card-oval {
+  background-color: #121111;
+  border-radius: 150px;
+  padding: 40px 30px;
+  width: 300px;
+  box-shadow: 0px 5px 15px black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card-oval:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 8px 20px #edef34;
+}
+
+.card-oval h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #edef34;
+  text-shadow: 0px 3px 4px #e5b050;
+}
+
+.card-oval ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-oval li {
+  font-size: 1.5rem;
+  color: #edef34;
+  margin-bottom: 10px;
+  font-style: oblique;
+  font-weight: 500;
+}
+
+.separador {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #121111;
+  text-shadow: 2px 2px 5px #5f5e5e;
+}
+@media (max-width: 768px) {
+  .container-ferramentas {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .separador {
+    font-size: 3rem;
+    margin: 10px 0;
+  }
+
+  .card-oval {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+/* Animação de entrada suave */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplica nos cards e no X */
+.container-ferramentas {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.card-oval {
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Pequeno efeito pulsante no X */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.separador {
+  animation: pulse 2s infinite ease-in-out;
+}
+  
+  /* CARROSSEL TRABALHOS */
+.trabalhos .swiper {
+  width: 90%;
+  max-width: 900px;
+  height: 500px;
+  border-radius: 20px;
+  margin: 0 auto;
+  box-shadow: 0px 5px 10px #5f5e5e;
+}
+.trabalhos {
+  margin-bottom: 120px; /* ou outro valor conforme o espaço desejado */
+}
+
+.trabalhos .swiper-slide {
+  background-color: #121111;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  padding: 40px 20px;
+  transition:font transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #edef34;
+  width: 100%;
+  
+}
+.swiper-trabalhos .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-trabalhos img {
+  width: 100%;
+  height: 300px; /* altura fixa */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.trabalhos .swiper-slide:hover {
+  transform: scale(1.03);
+}
+
+.trabalhos .swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 8px rgba(229, 181, 5, 1);
+}
+
+.trabalhos .swiper-pagination-bullet {
+  background: #edef34;
+  opacity: 0.7;
+}
+
+.trabalhos .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.trabalhos .swiper-button-next,
+.trabalhos .swiper-button-prev {
+  color: #edef34;
+  text-shadow: 0px 0px 5px #000;
+}
+
+.trabalhos .swiper-scrollbar-drag {
+  background: #edef34;
+}
+/* CARROSSEL DEPOIMENTOS */
+.container-colunas {
+  height: 480px;
+  background: linear-gradient(to right, #121111,#edef34);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 40px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
+
+.container-colunas .coluna {
+  flex: 1;
+  box-sizing: border-box;
+  min-height: 280px;
+  padding: 40px;
+}
+/* CARROSSEL DEPOIMENTOS */
+.depoimentos .swiper {
+
+  width: 70%;
+  max-width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  margin: 0 auto;
+  flex-direction: column;
+  box-shadow: 0px 5px 10px black;
+}
+
+.depoimentos .swiper-slide {
+  background-color: #121111;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1rem;
+  padding: 40px 20px;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #121111;
+  width: 100%
+  
+  
+}
+
+.depoimentos .swiper-slide:hover {
+  transform: scale(1.03);
+}
+
+
+.depoimentos .swiper-pagination-bullet {
+  background: #edef34;
+  opacity: 0.7;
+}
+
+.depoimentos .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.depoimentos .swiper-button-next,
+.depoimentos .swiper-button-prev {
+  color: #edef34;
+  text-shadow: 0px 0px 5px #000;
+}
+
+.depoimentos .swiper-scrollbar-drag {
+  background: #edef34;
+}
+
+.card-depoimento {
+  padding: 2rem;
+  background-color:#edef34;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 0 auto; /* centraliza horizontalmente */
+  text-align: center; /* centraliza o texto */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px; /* ajustável conforme o conteúdo */
+  box-shadow: 0px 4px 8px rgba(229, 181, 5, 1);
+}  
+.container-colunas .coluna h2 {
+  margin: 0 0 20px 0;
+  font-size: 1.8rem;
+  width: 100%;
+}
+
+.depoimentos h2{
+       
+        text-align: left;
+        text-shadow: 0px 3px 4px #e5b050; 
+        color: #edef34;
+        
+  }
+  
+  .depoimentos p{
+        text-align: center;
+        font-size: 1.1rem;
+       
+
+  }
+  .contato h2{
+        color: #121111;
+        text-align: justify;
+        font-size: 2rem;
+        text-shadow: 0px 3px 4px #5f5e5e; 
+    }
+    .contato p{
+           color: #121111;
+            text-align: left;
+            font-size: 1.8rem;
+          
+    }
+    .redes h2{
+        color: #121111;
+        text-align: justify;
+        font-size: 2rem;
+        text-shadow: 0px 3px 4px #5f5e5e; 
+        
+    }
+   
+/* Container da seção de contato */
+.contato {
+  display: flex;
+  justify-content: space-between;
+  flex-direction:column;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 0 100px;
+  width: 70%;
+  max-width: 500px;
+  height: 300px;
+}
+
+.contato-texto {
+  flex: 1;
+  min-width: 500px;
+}
+.contato .botao {
+  display: inline-block;
+  margin: 20px 0 150px 150px; /* combinando as margens */
+  padding: 10px 20px;
+  background-color: #edef34;
+  border: solid;
+  color: black;
+  text-decoration: none;
+  border-radius: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  box-shadow: 0px 5px 10px black;
+  
+}
+
+.contato .botao:hover {
+  transform: scale(1.09);
+}
+
+/* Redes sociais na seção de contato */
+.redes {
+  
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  height: 100%;
+  margin-top: -30px;
+ 
+}
+.redes-texto{
+  list-style: none;
+  
+}
+ .redes-texto li a {
+  line-height: 2.5;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: right;
+  gap: 5px;
+  color: #121111;
+  text-decoration: none;
+  
+}
+
+.redes a:hover {
+  transform: scale(1.09);
+}
+
+  .footer {
+    background-color:#121111;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: #edef34;
+    text-shadow: 0px 4px 4px #e5b050;  
+  }
+
+
+/* Responsivo para tablets e celulares */
+@media (max-width: 768px) {
+  
+  #logo {
+        height: 100px;
+        width: 100px;
+  }
+  
+  #botao-menu a{
+        font-size: 1.3rem !important;
+  }
+    
+  .apresentacao .texto,
+  .sobre p, .sobre h2,
+  .ferramentas p, .ferramentas h2,
+  .trabalhos h2 {
+    margin-left: 20px;
+    padding: 20px;
+  }
+
+  .apresentacao {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), #edef34);
+    scroll-margin-top: 150px; 
+  }
+
+  .apresentacao .texto {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .apresentacao .foto img {
+    margin-right: 0;
+    margin-top: 20px;
+  }
+
+  .contato .botao {
+    margin-left: 0;
+  }
+}
+@media (max-width: 992px) {
+  .container-colunas {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+  }
+
+  .container-colunas .coluna {
+    width: 100%;
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .contato {
+    width: 100%;
+    max-width: none;
+    padding: 0 20px;
+    height: auto;
+    scroll-margin-top: 150px; 
+  }
+
+  .contato-texto {
+    min-width: auto;
+  }
+
+  .contato .botao {
+    margin: 20px auto;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .redes {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .depoimentos .swiper {
+    width: 90%;
+    max-width: 100%;
+  }
+  .depoimentos{
+    scroll-margin-top: 90px; 
+  }
+  .trabalhos{
+    scroll-margin-top: 100px; 
+  }
+  
+  
+  .container-colunas {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), #edef34);
+  }
+}
+
+  
