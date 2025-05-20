@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marjú Hermann - Desenvolvedora Front-end</title>
+  <link rel="stylesheet" href="global.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sonsie+One&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Seção 1: Menu -->
+  <header class="header">
+    <div class="logo">
+      <img src="./public/logo preta (6).png" alt="Logo Marjú Hermann">
+    </div>  
+  <!-- Menu Desktop -->
+<nav class="desktop-menu">
+  <ul>
+     <li><a href="#apresentacao">INÍCIO</a></li>
+    <li><a href="#sobre">SOBRE</a></li>
+     <li><a href="#ferramentas">FERRAMENTAS</a></li>
+      <li><a href="#trabalhos">TRABALHOS</a></li>
+    <li><a href="#depoimentos">DEPOIMENTOS</a></li>
+    <li><a href="#contato">CONTATO</a></li>
+  </ul>
+</nav>
+
+<!-- Botão Hamburguer -->
+<div class="hamburger" onclick="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<!-- Menu (escondido por padrão) -->
+<nav class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#apresentacao">INÍCIO</a></li>
+    <li><a href="#sobre">SOBRE</a></li>
+     <li><a href="#ferramentas">FERRAMENTAS</a></li>
+      <li><a href="#trabalhos">TRABALHOS</a></li>
+    <li><a href="#depoimentos">DEPOIMENTOS</a></li>
+    <li><a href="#contato">CONTATO</a></li>
+  </ul>
+</nav>
+</header>
+  
+
+  <!-- Seção 2: Apresentação -->
+  <section id="apresentacao" class="apresentacao">
+    <div class="texto">
+      <p>Oi, eu sou a </p>
+        <h1>Marjú Hermann</h1></p>
+      <p>Desenvolvedora Front end</p>
+      <a href="https://api.whatsapp.com/send/?phone=5541992117441&text=Ol%C3%A1%21+Sou+a+Marj%C3%BA+Hermann%2C+como+posso+te+ajudar%3F&type=phone_number&app_absent=0" class="botao"><img src="./public/whatsapp.svg"> Entre em contato</a>
+    </div>
+    <div class="foto">
+      <img src="./public/marju-perfil.png" alt="Foto da Marjú Hermann">
+    </div>
+  </section>
+
+  <!-- Seção 3: Sobre mim (Terminal Style) -->
+<section id="sobre" class="sobre-terminal espaco-topo">
+
+  <h2 class="titulo-terminal">>>> Quem é Marjú?</h2>
+  <p id="texto-maquina" class="maquina-texto-terminal"></p>
+
+  </section>
+
+
+ 
+<!-- Seção 4: Ferramentas -->
+<section id="ferramentas" class="ferramentas">
+  <div class="container-ferramentas">
+    <div class="card-oval">
+      <h2>Ferramentas</h2>
+      <ul>
+        <li>Figma</li>
+        <li>Bootstrap</li>
+        <li>VS Code</li>
+        <li>Node</li>
+      </ul>
+    </div>
+
+    <div class="separador">X</div>
+
+    <div class="card-oval">
+      <h2>Linguagens</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>...</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  <!-- Seção 5: Trabalhos -->
+  <section id="trabalhos" class="trabalhos">
+    <h2>Trabalhos e Estudos recentes</h2>
+   
+  <!-- Swiper Container -->
+<div class="swiper swiper-trabalhos">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <a href="https://natal-solidario-senac-2024.netlify.app/" target="_blank" style="text-decoration: none; color: inherit;">
+        <img src="./public/natalSolidario.png" alt="Imagem do slide"><p>Ver site</p></a></div>
+    <div class="swiper-slide">
+      <a href="https://remoaloha.netlify.app/" target="_blank" style="text-decoration: none; color: inherit;">
+      <img src="./public/remoAloha.png" alt="Imagem do slide"><p>Ver site</p></a></div>
+    <div class="swiper-slide">
+      <a href="https://patamolhada.netlify.app/" target="_blank" style="text-decoration: none; color: inherit;">
+      <img src="./public/patasMolhadas.png" alt="Imagem do slide"><p>Ver site</p></a></div>
+  </div>
+  </section>
+<div class="container-colunas">
+<!-- Seção 6: Depoimentos -->
+<section id="depoimentos" class="coluna depoimentos">
+  <h2>Depoimentos</h2>
+
+  <div class="swiper swiper-depoimentos">
+    <div class="swiper-wrapper">
+      
+      <!-- Depoimento 1 -->
+      <div class="swiper-slide">
+        <div class="card-depoimento">
+          <h3>Maria Oliveira</h3>
+          <p><em>"Adorei o atendimento! Tudo muito rápido e profissional."</em></p>
+        </div>
+      </div>
+
+      <!-- Depoimento 2 -->
+      <div class="swiper-slide">
+        <div class="card-depoimento">
+          <h3>João Silva</h3>
+          <p><em>"Serviço excelente. Recomendo para todos os meus amigos."</em></p>
+        </div>
+      </div>
+
+      <!-- Depoimento 3 -->
+      <div class="swiper-slide">
+        <div class="card-depoimento">
+          <h3>Ana Costa</h3>
+          <p><em>"Me senti muito bem acolhida e o resultado foi incrível!"</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção 7: Contato -->
+<section id="contato" class="coluna contato">
+  <div class="contato-container">
+    <div class="contato-texto">
+      <h2>Querendo iniciar um projeto?</h2>
+      <p>Vamos tomar um café, estou animada para saber mais sobre o seu projeto e como posso oferecer soluções inovadoras.</p>
+      <a href="https://api.whatsapp.com/send/?phone=5541992117441&text=Ol%C3%A1%21+Sou+a+Marj%C3%BA+Hermann%2C+como+posso+te+ajudar%3F&type=phone_number&app_absent=0" 
+      class="botao">Vamos Conversar?</a>
+    </div>
+  </div>
+</section>
+  <!-- Seção 8: redes sociais-->
+   <section id="redes"class="coluna redes">
+   <div class="redes-container">
+    <h2>Redes Sociais</h2>
+    <ul class="redes-texto">
+      <li><a href="https://github.com/Marju-cybeer"><img src="./public/github.svg"> GitHub</a></li>
+      <li><a href="#"><img src="./public/linkedin.svg"> LinkedIn</a></li>
+      <li><a href="#"><img src="./public/instagram.svg"> Instagram</a></li>
+    </ul>
+  </div>
+  </section>
+</div>
+  <!-- Seção 9: Rodapé -->
+  <footer class="footer">
+    <p> &copy; Marjú Hermann 2025 – Todos os direitos reservados</p>
+  </footer>
+  
+  <!-- Scripts do Bootstrap (JS + Popper.js) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+        crossorigin="anonymous"></script>
+
+<!-- Scripts do Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Script Swiper personalizado -->
+<script>
+  function toggleMenu() {
+  const hamburger = document.querySelector('.hamburger');
+  const menu = document.getElementById('mobileMenu');
+  hamburger.classList.toggle('active');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Fechar o menu ao clicar em uma opção
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.getElementById('mobileMenu');
+    hamburger.classList.remove('active');
+    menu.style.display = 'none';
+  });
+});
+  const swiper = new Swiper(".swiper-trabalhos", {
+    loop: true,
+    slidesPerView: 1,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    scrollbar: {
+      el: ".swiper-scrollbar",
+    },
+  });
+
+  const swiperDepoimentos = new Swiper(".swiper-depoimentos", {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    scrollbar: {
+      el: ".swiper-scrollbar",
+    },
+  });
+   const texto = `... Nascida e criada em Paranaguá, litoral do Paraná. Atualmente, estou me especializando no curso técnico de Programador Web pelo SENAC, expandindo meus horizontes no universo do desenvolvimento. Sou formada em Ciências Contábeis pela UNESPAR, mas foi na tecnologia, no design e nas artes que encontrei minha verdadeira paixão. Amo tudo o que envolve criatividade, estética e inovação — seja no código, no visual ou nas ideias.
+   Recentemente, concluí um curso sobre aplicação de Inteligência Artificial em negócios, o que fortaleceu ainda mais meu propósito: mostrar a pequenos empreendedores como ferramentas online podem trazer eficiência e benefícios reais para seus negócios.
+   Unindo conhecimento técnico e sensibilidade artística, busco criar experiências digitais funcionais, bonitas e estratégicas, ajudando pessoas a transformarem ideias em soluções.`;
+
+  const elemento = document.getElementById("texto-maquina");
+  let i = 0;
+
+  function digitar() {
+    if (i < texto.length) {
+      elemento.innerHTML += texto.charAt(i);
+      i++;
+      setTimeout(digitar, 30); // velocidade de digitação
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", digitar);
+</script>
+
+</body>
+</html>
