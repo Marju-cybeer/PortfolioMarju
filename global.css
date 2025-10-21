@@ -201,8 +201,8 @@ transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     padding: 40px 20px;
     flex-wrap: wrap;
     box-shadow: 0px 5px 10px black;
-    padding-top: 150px; /* Ajuste conforme a altura do seu cabeçalho */
-     margin-bottom: 95px;
+    padding-top: 200px; /* Ajuste conforme a altura do seu cabeçalho */
+    margin-bottom: 100px;
   }
   
   .apresentacao .texto {
@@ -241,9 +241,13 @@ transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
   
   .apresentacao .foto img {
-    max-width: 290px;
+    max-width: 1100px; /* 👉 antes era 890px */
+    width: 100%;
+    height: auto;
     margin-right: 80px;
-    box-shadow: 10px 10px 9px black;
+    margin-bottom: -40px;
+    align-self: flex-end; /* 👈 só a imagem vai pra parte inferior */
+    
   }
 
     /*SOBRE*/
